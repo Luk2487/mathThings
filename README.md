@@ -1,0 +1,1 @@
+Python projects with maths algorithms. Aims to understand how does machines computes these maths thinges. As of right now, it only contains a sequence module, where you can define a sequence as an object, and even put sequences into sequences. You can then calculate indexs.
