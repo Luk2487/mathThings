@@ -14,7 +14,7 @@ a = 7*1+2*1
 # an expression string is valid whenever replacing all of the variables with numbers is a valid operation
 >>> 9 
 ```
-Using the built-in functions, you can replace variables with values and then compute it
+Using the built-in functions, you can replace variables with values and then compute the expression
 
 ## Sequence Objects
 Let's take an exemple:
@@ -28,9 +28,9 @@ variable.define_by_recursion(2, Expression('un_1 + un + n', 'un_1', 'un', 'n'), 
 `'un'` is the name of the sequence in the Expression Object, that is to say, how $u_n$ is translated. Following that, $u_{n+1}$ will translate into `'un_1'`.
 If you call it `'some_random_name_lmao'`, then $u_{n+1}$ would be `'some_random_name_lmao_1'`. Defaults to `'un'`
 
-`'n'` is the name of the variablein the Expression Object, for $u_n$, this is $n$. Defaults to `'n'`
+`'n'` is the name of the variable in the Expression Object, (for $u_n$, the variable is $n$). Defaults to `'n'`
 
-The third argument is the inferior born of the domain of definition of the sequence. $(un) \in \mathbb{N}$ so the sequence starts with $u_0$ and so the third argument is `0`. Defaults to `0`. 
+The third argument is the inferior born of the domain of definition of the sequence. $(u_n) \in \mathbb{N}$ so the sequence starts with $u_0$ and so the third argument is `0`. Defaults to `0`. 
 
 Then come the **definition step** :
 ```python
