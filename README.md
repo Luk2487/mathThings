@@ -32,4 +32,30 @@ If you call it `'some_random_name_lmao'`, then $u_{n+1}$ would be `'some_random_
 
 The third argument is the inferior born of the domain of definition of the sequence. $(un) \in \mathbb{N}$ so the sequence starts with $u_0$ and so the third argument is `0`. Defaults to `0`. 
 
+Then come the **definition step** :
+```python
+def define_explicitly(expression_object: Expression):
+  ...
+def define_by_recursion(defined_at_n_plus: int, expression_object: Expression, first_terms: list | tuple):
+  ...
+```
 
+$u_{n+2} = u_{n+1} + u_n$, with $u_0 = 0$ and $u_1 = 1$, the fibonacci sequence, would translate into
+```python
+Sequence('Fn').define_by_recursion(2, Expression('Fn_1 + Fn', 'Fn_1', 'Fn'), (0, 1))
+```
+
+Now you can use `.compute` and `.compute_in_list` to get the result.
+
+Also, you can **integrate sequences in others** with `.include_sequence(var_in_expression, concerned_sequence, at_wich_index)`
+
+```python
+a = Sequence()
+b = Sequence()
+a.define_by_recursion(1, Expression('un + v', 'un', 'vn'), [1])
+a.include_sequence('v', b, '2n + 3') # Note that you can't put sequences in the index.
+```
+
+This is the equivalent to $a_{n+1} = a_n + b_{2n+3}$ ($a_{n+1} = a_n + v$ and $v = b_{2n+3}$)
+
+## To Be Continued
